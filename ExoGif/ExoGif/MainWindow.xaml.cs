@@ -24,5 +24,12 @@ namespace ExoGif
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new CaptureWindow().ShowDialog();
+            this.Show();
+        }
     }
 }
