@@ -26,9 +26,16 @@ namespace ExoGif
         private bool isDrawing = false;
         private double X, Y, W, H;
 
+        public MP3Player startPlayer;
+        public MP3Player endPlayer;
+
         public CaptureWindow()
         {
             InitializeComponent();
+            startPlayer = new MP3Player(Environment.CurrentDirectory + @"\Assets\Sounds\startSound.mp3", "startSound", false);
+            endPlayer = new MP3Player(Environment.CurrentDirectory + @"\Assets\Sounds\endSound.mp3", "endSound", false);
+            startPlayer.Volume("startSound", 1000);
+            endPlayer.Volume("endSound", 1000);
         }
 
         private void Grid1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -54,9 +61,15 @@ namespace ExoGif
             var hwnd = new WindowInteropHelper(this).Handle;
             NativeMethods.SetWindowExTransparent(hwnd);
 
+            //Recording start sound
+            startPlayer.Play("startSound");
+
             // Calculate rectangle cords/size
             Point revampedPoint = PointToScreen(new Point(X, Y));
             ScreenRecording.Save("C:\\Users\\shaan\\Documents\\GitHub\\ExoGif\\meme.gif", 10, 10, (int)revampedPoint.X, (int)revampedPoint.Y, (int)W, (int)H);
+
+            endPlayer.Play("endSound");
+
             this.Close();
         }
 
