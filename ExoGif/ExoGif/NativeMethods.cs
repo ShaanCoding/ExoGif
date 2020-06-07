@@ -9,7 +9,13 @@ namespace ExoGif
 {
     class NativeMethods
     {
+        #region Constants
         public const int SRCCOPY = 0x00CC0020; // BitBlt dwRop parameter
+        const int WS_EX_TRANSPARENT = 0x00000020;
+        const int GWL_EXSTYLE = (-20);
+        #endregion
+
+        #region Screenshot Native Methods
         [DllImport("gdi32.dll")]
         public static extern bool BitBlt(IntPtr hObject, int nXDest, int nYDest,
             int nWidth, int nHeight, IntPtr hObjectSource,
@@ -44,5 +50,20 @@ namespace ExoGif
         public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDC);
         [DllImport("user32.dll")]
         public static extern IntPtr GetWindowRect(IntPtr hWnd, ref RECT rect);
+        #endregion
+
+        #region ClickThroughWPF Native Methods
+        [DllImport("user32.dll")]
+        static extern int GetWindowLong(IntPtr hwnd, int index);
+
+        [DllImport("user32.dll")]
+        static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
+
+        public static void SetWindowExTransparent(IntPtr hwnd)
+        {
+            var extendedStyle = GetWindowLong(hwnd, GWL_EXSTYLE);
+            SetWindowLong(hwnd, GWL_EXSTYLE, extendedStyle | WS_EX_TRANSPARENT);
+        }
+        #endregion
     }
 }

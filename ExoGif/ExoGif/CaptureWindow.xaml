@@ -10,21 +10,21 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Background="{x:Null}"
-        Title="CaptureWindow" Height="450" Width="800">
-    
+        Title="CaptureWindow" Height="450" Width="800" Topmost="True">
+
     <Grid x:Name="Grid1" 
           Background="Black" 
           Opacity=".4" 
           MouseLeftButtonDown="Grid1_MouseLeftButtonDown"
           MouseLeftButtonUp="Grid1_MouseLeftButtonUp"
           MouseMove="Grid1_MouseMove">
+
         <Canvas x:Name="Canvas1" Opacity=".5" >
             <Rectangle x:Name="Rect" 
-                       Stroke="Black" 
-                       StrokeDashArray="4 4" 
+                       Stroke="White" 
                        SnapsToDevicePixels="True" 
                        StrokeThickness="2" 
-                       Fill="White"/>
+                       Fill="DarkGray"/>
         </Canvas>
     </Grid>
 </Window>

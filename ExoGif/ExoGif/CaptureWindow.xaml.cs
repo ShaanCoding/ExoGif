@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -8,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -32,7 +34,6 @@ namespace ExoGif
         private void Grid1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             isDrawing = true;
-
             Start = Mouse.GetPosition(Canvas1);
 
             Canvas.SetLeft(Rect, Start.X);
@@ -42,12 +43,20 @@ namespace ExoGif
         private void Grid1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             isDrawing = false;
-            this.Hide();
-            // Calculate rectangle cords/size
-            ScreenRecording screenRecording = new ScreenRecording();
-            screenRecording.Save("C:\\Users\\shaan\\Documents\\GitHub\\ExoGif\\meme.gif", 10, 10, (int)X, (int)Y, (int)W, (int)H);
 
-            MessageBox.Show("File saved");
+            Grid1.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.0 };
+            Canvas1.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.0 };
+            Rect.Fill = Brushes.Transparent;
+            Rect.Opacity = 1;
+            MessageBox.Show(string.Format("{0} X {1} Y {2} W {3} H", X.ToString(), Y.ToString(), W.ToString(), H.ToString()));
+
+            //Allows click through
+            var hwnd = new WindowInteropHelper(this).Handle;
+            NativeMethods.SetWindowExTransparent(hwnd);
+
+            // Calculate rectangle cords/size
+            Point revampedPoint = PointToScreen(new Point(X, Y));
+            ScreenRecording.Save("C:\\Users\\shaan\\Documents\\GitHub\\ExoGif\\meme.gif", 10, 10, (int)revampedPoint.X, (int)revampedPoint.Y, (int)W, (int)H);
             this.Close();
         }
 

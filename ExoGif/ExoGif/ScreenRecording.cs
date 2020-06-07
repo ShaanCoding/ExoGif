@@ -5,12 +5,15 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
 
 namespace ExoGif
 {
     public class ScreenRecording
     {
-        public Image CaptureWindow(int Left, int Top, int Width, int Height)
+        public static Image CaptureWindow(int Left, int Top, int Width, int Height)
         {
             // get te hDC of the target window
             IntPtr hdcSrc = NativeMethods.GetWindowDC(NativeMethods.GetDesktopWindow());
@@ -35,7 +38,7 @@ namespace ExoGif
             return img;
         }
 
-        public void Save(string outputFileName, int fps, int timeSeconds, int X, int Y, int W, int H)
+        public static void Save(string outputFileName, int fps, int timeSeconds, int X, int Y, int W, int H)
         {
             int delay = Convert.ToInt32(1000 / fps);
             int frames = timeSeconds * fps;
