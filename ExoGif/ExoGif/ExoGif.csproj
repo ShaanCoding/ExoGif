@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Assets\ExoGIF.ico" />
     <Content Include="Assets\Sounds\startSound.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
