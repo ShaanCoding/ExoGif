@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="ExoGIF" Height="450" Width="800" Icon="Assets/ExoGIF.ico">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="258,170,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="recordButton" Content="Record" HorizontalAlignment="Left" Margin="258,170,0,0" VerticalAlignment="Top" Width="75" Click="recordButton_Click"/>
+        <Button x:Name="settingsButton" Content="Settings" HorizontalAlignment="Left" Margin="429,203,0,0" VerticalAlignment="Top" Width="75" Click="settingsButton_Click"/>
 
     </Grid>
 </Window>
