@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -8,12 +9,28 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace ExoGif
 {
     public class ScreenRecording
     {
-        public static Image CaptureWindow(int Left, int Top, int Width, int Height)
+        public AnimatedGif.AnimatedGifCreator gif;
+        string outputFileName;
+        int X, Y, W, H;
+
+        public ScreenRecording(string outputFileName, int fps, int X, int Y, int W, int H)
+        {
+            int delay = Convert.ToInt32(1000 / fps);
+            gif = AnimatedGif.AnimatedGif.Create(outputFileName, delay);
+            this.outputFileName = outputFileName;
+            this.X = X;
+            this.Y = Y;
+            this.W = W;
+            this.H = H;
+        }
+
+        public Image CaptureWindow(int Left, int Top, int Width, int Height)
         {
             // get te hDC of the target window
             IntPtr hdcSrc = NativeMethods.GetWindowDC(NativeMethods.GetDesktopWindow());
@@ -38,20 +55,39 @@ namespace ExoGif
             return img;
         }
 
-        public static void Save(string outputFileName, int fps, int timeSeconds, int X, int Y, int W, int H)
-        {
-            int delay = Convert.ToInt32(1000 / fps);
-            int frames = timeSeconds * fps;
+        //Instead class structure
+        //Save - creates file with delays
+        //Add frame function
+        //Dispose / close function
 
-            using (var gif = AnimatedGif.AnimatedGif.Create(outputFileName, delay))
+        public void SaveFrame()
+        {
+            Image img = CaptureWindow(X, Y, W, H);
+            gif.AddFrame(img);
+            img.Dispose();
+        }
+
+        public void Close()
+        {
+            gif.Dispose();
+        }
+
+        public void Delete()
+        {
+            try
             {
-                for (int i = 0; i < frames; i++)
+                if(File.Exists(outputFileName))
                 {
-                    Image img = CaptureWindow(X, Y, W, H);
-                    System.Threading.Thread.Sleep(delay);
-                    gif.AddFrame(img);
-                    img.Dispose();
+                    File.Delete(outputFileName);
                 }
+                else
+                {
+                    MessageBox.Show("File could not be found");
+                }
+            }
+            catch(IOException ex)
+            {
+                MessageBox.Show("Error: " + ex);
             }
         }
     }
