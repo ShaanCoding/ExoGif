@@ -64,7 +64,7 @@ namespace ExoGif
                 Title = "My Recordings",
                 Arguments = "/myRecordings",
                 Description = "Takes you to your GIF recordings",
-                CustomCategory = "",
+                CustomCategory = "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯",
                 //ICON IS TEMP
                 IconResourcePath = Assembly.GetEntryAssembly().CodeBase,
                 ApplicationPath = Assembly.GetEntryAssembly().CodeBase
@@ -75,7 +75,7 @@ namespace ExoGif
                 Title = "Settings",
                 Arguments = "/settings",
                 Description = "Takes you to the settings menu",
-                CustomCategory = "",
+                CustomCategory = "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯",
                 //ICON IS TEMP
                 IconResourcePath = Assembly.GetEntryAssembly().CodeBase,
                 ApplicationPath = Assembly.GetEntryAssembly().CodeBase
@@ -86,7 +86,7 @@ namespace ExoGif
                 Title = "Help",
                 Arguments = "/help",
                 Description = "Takes you to the help menu",
-                CustomCategory = "",
+                CustomCategory = "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯",
                 //Icon is temp
                 IconResourcePath = Assembly.GetEntryAssembly().CodeBase,
                 ApplicationPath = Assembly.GetEntryAssembly().CodeBase
