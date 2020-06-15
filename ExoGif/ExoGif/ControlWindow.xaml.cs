@@ -96,6 +96,12 @@ namespace ExoGif
                     break;
                 }
 
+                //pause
+                while(isPause)
+                {
+                    System.Threading.Thread.Sleep(10);
+                }
+
                 //Return progressbar%
                 int returnProgressPercent = (int)Math.Ceiling((decimal)(i) / frames * 100);
                 worker.ReportProgress(returnProgressPercent);
@@ -108,6 +114,7 @@ namespace ExoGif
             {
                 //Means canceleed
                 //Set stop variables i.e change button to start, progress bar 100% etc
+                screenRecording.Close();
 
                 //Delete file
                 screenRecording.Delete();
@@ -116,13 +123,14 @@ namespace ExoGif
             else if(e.Error != null)
             {
                 //Means error occured
+                screenRecording.Close();
             }
             else
             {
                 //This means it is done finishing successfully
-
+                screenRecording.Close();
             }
-            screenRecording.Close();
+
             this.Close();
         }
 
