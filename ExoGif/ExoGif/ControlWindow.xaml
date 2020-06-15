@@ -5,11 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExoGif"
         mc:Ignorable="d"
-        Title="ExoGIF" Height="450" Width="800" Icon="Assets/ExoGIF.ico">
+        Title="ExoGIF" Height="60" Width="150" Icon="Assets/ExoGIF.ico"
+        ShowInTaskbar="False" Topmost="True" WindowStyle="None" Background="#FF23272A" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Width="163" Height="108" Click="CancelButton_Click"/>
-        <Button x:Name="StartStopButton" Content="Stop" HorizontalAlignment="Left" Margin="293,90,0,0" VerticalAlignment="Top" Width="163" Height="108" Click="StartStopButton_Click"/>
-        <Button x:Name="SubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="565,90,0,0" VerticalAlignment="Top" Width="163" Height="108" Click="SubmitButton_Click"/>
-        <ProgressBar x:Name="TimeRecordedBar" HorizontalAlignment="Left" Height="33" Margin="122,245,0,0" VerticalAlignment="Top" Width="504"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="CancelButton" Content="Cancel" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="45" Height="20" Click="CancelButton_Click"/>
+        <Button x:Name="StartStopButton" Content="Stop" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="45" Height="20" Click="StartStopButton_Click"/>
+        <Button x:Name="SubmitButton" Content="Submit" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="45" Height="20" Click="SubmitButton_Click"/>
+
+        <ProgressBar x:Name="TimeRecordedBar" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="10" VerticalAlignment="Top" Width="150" Margin="-4,10,-4,0" BorderBrush="{x:Null}" Foreground="#FFFF701E">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
     </Grid>
 </Window>

@@ -57,11 +57,14 @@ namespace ExoGif
         {
             if (isPause)
             {
-                isPause = !isPause;
+                //If is paused we unpause
+                isPause = false;
+                StartStopButton.Content = "Stop";
             }
             else
             {
-                isPause = !isPause;
+                isPause = true;
+                StartStopButton.Content = "Start";
             }
         }
 
@@ -83,6 +86,17 @@ namespace ExoGif
                 screenRecording.SaveFrame();
                 System.Threading.Thread.Sleep(delay);
 
+                //pause
+                while(isPause)
+                {
+                    System.Threading.Thread.Sleep(10);
+                    //if program is set to complete whilst paused
+                    if(isSubmit == true)
+                    {
+                        break;
+                    }
+                }
+
                 //Cancels
                 if (worker.CancellationPending == true)
                 {
@@ -91,15 +105,9 @@ namespace ExoGif
                 }
 
                 //Finishes early
-                if(isSubmit == true)
+                if (isSubmit == true)
                 {
                     break;
-                }
-
-                //pause
-                while(isPause)
-                {
-                    System.Threading.Thread.Sleep(10);
                 }
 
                 //Return progressbar%
