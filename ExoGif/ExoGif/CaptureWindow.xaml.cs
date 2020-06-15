@@ -70,8 +70,8 @@ namespace ExoGif
 
             // Calculate rectangle cords/size
             Point revampedPoint = PointToScreen(new Point(X, Y));
-
-            ControlWindow controlWindow = new ControlWindow("C:\\Users\\shaan\\Documents\\GitHub\\ExoGif\\meme.gif", 10, 10, (int)revampedPoint.X, (int)revampedPoint.Y, (int)W, (int)H);
+            string fileName = Properties.Settings.Default.saveDirectory + "\\" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".gif";
+            ControlWindow controlWindow = new ControlWindow(fileName, (int)revampedPoint.X, (int)revampedPoint.Y, (int)W, (int)H);
             controlWindow.ShowDialog();
 
             if (Properties.Settings.Default.playSoundCapture)
