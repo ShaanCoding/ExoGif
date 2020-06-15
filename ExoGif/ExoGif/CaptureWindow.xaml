@@ -1,0 +1,31 @@
+﻿<Window x:Name="ExoGIF" x:Class="ExoGif.CaptureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExoGif"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="{x:Null}"
+        Title="ExoGIF" Height="450" Width="800" Topmost="True" Icon="Assets/ExoGIF.ico"
+        ShowInTaskbar="False" >
+
+    <Grid x:Name="Grid1" 
+          Background="Black" 
+          Opacity=".4" 
+          MouseLeftButtonDown="Grid1_MouseLeftButtonDown"
+          MouseLeftButtonUp="Grid1_MouseLeftButtonUp"
+          MouseMove="Grid1_MouseMove">
+
+        <Canvas x:Name="Canvas1" Opacity=".5" >
+            <Rectangle x:Name="Rect" 
+                       Stroke="White" 
+                       SnapsToDevicePixels="True" 
+                       StrokeThickness="2" 
+                       Fill="DarkGray"/>
+        </Canvas>
+    </Grid>
+</Window>
