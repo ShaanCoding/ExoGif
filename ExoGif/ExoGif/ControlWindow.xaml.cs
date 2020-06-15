@@ -32,6 +32,11 @@ namespace ExoGif
         public ControlWindow(string outputFileName, int X, int Y, int W, int H)
         {
             InitializeComponent();
+
+            //Sets screen location to top left
+            this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
+            this.Top = SystemParameters.WorkArea.Height - this.Height;
+
             screenRecording = new ScreenRecording(outputFileName, X, Y, W, H);
             //Means we have a progress / timer bar of max limit
             worker.WorkerReportsProgress = true;
