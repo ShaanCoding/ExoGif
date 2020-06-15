@@ -56,7 +56,6 @@ namespace ExoGif
             Canvas1.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.0 };
             Rect.Fill = Brushes.Transparent;
             Rect.Opacity = 1;
-            MessageBox.Show(string.Format("{0} X {1} Y {2} W {3} H", X.ToString(), Y.ToString(), W.ToString(), H.ToString()));
 
             //Allows click through
             var hwnd = new WindowInteropHelper(this).Handle;

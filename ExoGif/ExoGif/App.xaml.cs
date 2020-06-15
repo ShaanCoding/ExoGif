@@ -37,7 +37,7 @@ namespace ExoGif
                         settingsWindow.Show();
                         break;
                     case "/help":
-                        Process.Start("http://www.google.com");
+                        Process.Start("https://github.com/ShaanCoding/ExoGif");
                         break;
                 }
             }
