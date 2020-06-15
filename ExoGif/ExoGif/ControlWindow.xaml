@@ -6,18 +6,51 @@
         xmlns:local="clr-namespace:ExoGif"
         mc:Ignorable="d"
         Title="ExoGIF" Height="60" Width="150" Icon="Assets/ExoGIF.ico"
-        ShowInTaskbar="False" Topmost="True" WindowStyle="None" Background="#FF23272A" ResizeMode="NoResize">
+        ShowInTaskbar="False" Topmost="True" WindowStyle="None" Background="#1f1f1f" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" 
+                      BorderThickness="1"
+                      Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter Margin="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button x:Name="CancelButton" Content="Cancel" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="45" Height="20" Click="CancelButton_Click"/>
-        <Button x:Name="StartStopButton" Content="Stop" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="45" Height="20" Click="StartStopButton_Click"/>
-        <Button x:Name="SubmitButton" Content="Submit" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="45" Height="20" Click="SubmitButton_Click"/>
+        <Button x:Name="CancelButton" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="35" Height="35" Click="CancelButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/Buttons/close.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="StartStopButton" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="35" Height="35" Click="StartStopButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/Buttons/pause.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="SubmitButton" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="35" Height="35" Click="SubmitButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="Assets/Buttons/tick.png"/>
+            </Button.Background>
+        </Button>
 
-        <ProgressBar x:Name="TimeRecordedBar" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="10" VerticalAlignment="Top" Width="150" Margin="-4,10,-4,0" BorderBrush="{x:Null}" Foreground="#FFFF701E">
+        <ProgressBar x:Name="TimeRecordedBar" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="10" VerticalAlignment="Top" Width="150" Margin="-4,10,-4,0" BorderBrush="{x:Null}" Foreground="#FFFF701E" Background="#393939">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>

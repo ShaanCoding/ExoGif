@@ -131,6 +131,10 @@
   <ItemGroup>
     <Resource Include="Assets\ExoGIF.ico" />
     <Resource Include="Assets\Settings.ico" />
+    <Resource Include="Assets\Buttons\close.png" />
+    <Resource Include="Assets\Buttons\pause.png" />
+    <Resource Include="Assets\Buttons\recording.png" />
+    <Resource Include="Assets\Buttons\tick.png" />
     <Content Include="Assets\Sounds\startSound.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

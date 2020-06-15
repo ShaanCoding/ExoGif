@@ -12,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Resources;
 using System.Windows.Shapes;
 
 namespace ExoGif
@@ -55,12 +56,24 @@ namespace ExoGif
             {
                 //If is paused we unpause
                 isPause = false;
-                StartStopButton.Content = "Stop";
+
+                Uri resourceUri = new Uri("Assets/Buttons/pause.png", UriKind.Relative);
+                StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+                BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+                var brush = new ImageBrush();
+                brush.ImageSource = temp;
+                StartStopButton.Background = brush;
             }
             else
             {
                 isPause = true;
-                StartStopButton.Content = "Start";
+
+                Uri resourceUri = new Uri("Assets/Buttons/recording.png", UriKind.Relative);
+                StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+                BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+                var brush = new ImageBrush();
+                brush.ImageSource = temp;
+                StartStopButton.Background = brush;
             }
         }
 
