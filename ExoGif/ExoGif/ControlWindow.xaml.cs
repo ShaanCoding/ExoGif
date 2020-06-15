@@ -90,8 +90,8 @@ namespace ExoGif
                 while(isPause)
                 {
                     System.Threading.Thread.Sleep(10);
-                    //if program is set to complete whilst paused
-                    if(isSubmit == true)
+                    //if program is set to complete whilst paused or is cancelled
+                    if(isSubmit == true || worker.CancellationPending)
                     {
                         break;
                     }
