@@ -18,8 +18,15 @@ namespace ExoGif
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            //On installation program does not have default installation this checks for this
+            if (ExoGif.Properties.Settings.Default.saveDirectory == null || ExoGif.Properties.Settings.Default.saveDirectory == "")
+            {
+                ExoGif.Properties.Settings.Default.saveDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                ExoGif.Properties.Settings.Default.Save();
+            }
+
             //THIS APP SHOULD OPEN AS A BG PROCESS IN AUTO-STARTUP
-            if(e.Args.Count() == 1)
+            if (e.Args.Count() == 1)
             {
                 //Should be a switch statement
                 switch(e.Args[0])

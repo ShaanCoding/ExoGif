@@ -32,12 +32,6 @@ namespace ExoGif
 
         public void LoadSettings()
         {
-            if(Properties.Settings.Default.saveDirectory == null || Properties.Settings.Default.saveDirectory == "")
-            {
-                Properties.Settings.Default.saveDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                Properties.Settings.Default.Save();
-            }
-
             URLDirectoryTextBox.Text = Properties.Settings.Default.saveDirectory;
             ExoGifSoundOnCaptureCheckBox.IsChecked = Properties.Settings.Default.playSoundCapture;
             ExoGifFolderAfterCaptureCheckBox.IsChecked = Properties.Settings.Default.openFileCapture;
