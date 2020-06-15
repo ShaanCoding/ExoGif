@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExoGif"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800" Icon="Assets/ExoGIF.ico">
+        Title="Settings" Height="450" Width="800" Icon="Assets/ExoGIF.ico"
+        ShowInTaskbar="False" >
     <Grid>
         
     </Grid>

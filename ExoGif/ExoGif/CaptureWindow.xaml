@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Background="{x:Null}"
-        Title="ExoGIF" Height="450" Width="800" Topmost="True" Icon="Assets/ExoGIF.ico">
+        Title="ExoGIF" Height="450" Width="800" Topmost="True" Icon="Assets/ExoGIF.ico"
+        ShowInTaskbar="False" >
 
     <Grid x:Name="Grid1" 
           Background="Black" 
