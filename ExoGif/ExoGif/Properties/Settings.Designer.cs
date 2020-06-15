@@ -82,5 +82,29 @@ namespace ExoGif.Properties {
                 this["hotkeySettings"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int recordingLength {
+            get {
+                return ((int)(this["recordingLength"]));
+            }
+            set {
+                this["recordingLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public int framesPerSecond {
+            get {
+                return ((int)(this["framesPerSecond"]));
+            }
+            set {
+                this["framesPerSecond"] = value;
+            }
+        }
     }
 }

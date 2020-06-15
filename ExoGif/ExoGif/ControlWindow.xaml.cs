@@ -24,18 +24,14 @@ namespace ExoGif
         public bool isPause = false;
         public bool isSubmit = false;
 
-        public int fps;
-        public int timeSeconds;
-
         ScreenRecording screenRecording;
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
-        public ControlWindow(string outputFileName, int fps, int timeSeconds, int X, int Y, int W, int H)
+        public ControlWindow(string outputFileName, int X, int Y, int W, int H)
         {
             InitializeComponent();
-            this.fps = fps;
-            this.timeSeconds = timeSeconds;
-            screenRecording = new ScreenRecording(outputFileName, fps, X, Y, W, H);
+
+            screenRecording = new ScreenRecording(outputFileName, X, Y, W, H);
             //Means we have a progress / timer bar of max limit
             worker.WorkerReportsProgress = true;
 
@@ -78,8 +74,8 @@ namespace ExoGif
             BackgroundWorker worker = sender as BackgroundWorker;
 
             //Do recording in here
-            int frames = timeSeconds * fps;
-            int delay = Convert.ToInt32(1000 / fps);
+            int frames = Properties.Settings.Default.recordingLength * Properties.Settings.Default.framesPerSecond;
+            int delay = Convert.ToInt32(1000 / Properties.Settings.Default.framesPerSecond);
 
             for (int i = 0; i < frames; i++)
             {

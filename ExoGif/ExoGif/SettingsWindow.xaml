@@ -17,5 +17,7 @@
         <ListBox x:Name="HotKeyListBoxTwo" HorizontalAlignment="Left" Height="100" Margin="247,131,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="227,507,0,0" VerticalAlignment="Top" Width="75" Click="OkButton_Click"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="362,507,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
+        <TextBox x:Name="LengthTextBox" HorizontalAlignment="Left" Height="23" Margin="43,252,0,0" TextWrapping="Wrap" Text="Length" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FramesPerSecondTextBox" HorizontalAlignment="Left" Height="23" Margin="44,281,0,0" TextWrapping="Wrap" Text="FPS" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

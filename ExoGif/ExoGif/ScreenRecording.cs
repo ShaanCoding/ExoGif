@@ -19,9 +19,9 @@ namespace ExoGif
         string outputFileName;
         int X, Y, W, H;
 
-        public ScreenRecording(string outputFileName, int fps, int X, int Y, int W, int H)
+        public ScreenRecording(string outputFileName, int X, int Y, int W, int H)
         {
-            int delay = Convert.ToInt32(1000 / fps);
+            int delay = Convert.ToInt32(1000 / Properties.Settings.Default.framesPerSecond);
             gif = AnimatedGif.AnimatedGif.Create(outputFileName, delay);
             this.outputFileName = outputFileName;
             this.X = X;

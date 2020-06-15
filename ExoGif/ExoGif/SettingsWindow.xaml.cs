@@ -32,7 +32,7 @@ namespace ExoGif
 
         public void LoadSettings()
         {
-            if(Properties.Settings.Default.saveDirectory == null)
+            if(Properties.Settings.Default.saveDirectory == null || Properties.Settings.Default.saveDirectory == "")
             {
                 Properties.Settings.Default.saveDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
                 Properties.Settings.Default.Save();
@@ -42,6 +42,8 @@ namespace ExoGif
             ExoGifBackgroundProcessCheckBox.IsChecked = Properties.Settings.Default.backgroundProcess;
             ExoGifSoundOnCaptureCheckBox.IsChecked = Properties.Settings.Default.playSoundCapture;
             ExoGifFolderAfterCaptureCheckBox.IsChecked = Properties.Settings.Default.openFileCapture;
+            LengthTextBox.Text = Properties.Settings.Default.recordingLength.ToString();
+            FramesPerSecondTextBox.Text = Properties.Settings.Default.framesPerSecond.ToString();
 
             /*
             //Also need hotkey one
@@ -58,10 +60,23 @@ namespace ExoGif
             Properties.Settings.Default.playSoundCapture = (bool)ExoGifSoundOnCaptureCheckBox.IsChecked;
             Properties.Settings.Default.openFileCapture = (bool)ExoGifFolderAfterCaptureCheckBox.IsChecked;
 
-            //Need hotkey one to be implemented later
+            int recordingLength, framesPerSecond;
+            bool successfulyParsedOne = Int32.TryParse(LengthTextBox.Text, out recordingLength);
+            bool sucessfulyParsedTwo = Int32.TryParse(FramesPerSecondTextBox.Text, out framesPerSecond);
 
-            //Applys save
-            Properties.Settings.Default.Save();
+            if(successfulyParsedOne && sucessfulyParsedTwo)
+            {
+                Properties.Settings.Default.recordingLength = recordingLength;
+                Properties.Settings.Default.framesPerSecond = framesPerSecond;
+
+                //Applys save
+                Properties.Settings.Default.Save();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: Frames per second or recording length are not ints");
+            }
         }
 
         private void URLDirectoryButton_Click(object sender, RoutedEventArgs e)
@@ -80,7 +95,6 @@ namespace ExoGif
         {
             //Save function
             SaveSettings();
-            this.Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

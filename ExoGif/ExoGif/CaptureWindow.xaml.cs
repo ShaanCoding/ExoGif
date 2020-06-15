@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -61,8 +62,11 @@ namespace ExoGif
             var hwnd = new WindowInteropHelper(this).Handle;
             NativeMethods.SetWindowExTransparent(hwnd);
 
-            //Recording start sound
-            startPlayer.Play("startSound");
+            if(Properties.Settings.Default.playSoundCapture)
+            {
+                //Recording start sound
+                startPlayer.Play("startSound");
+            }
 
             // Calculate rectangle cords/size
             Point revampedPoint = PointToScreen(new Point(X, Y));
@@ -70,7 +74,17 @@ namespace ExoGif
             ControlWindow controlWindow = new ControlWindow("C:\\Users\\shaan\\Documents\\GitHub\\ExoGif\\meme.gif", 10, 10, (int)revampedPoint.X, (int)revampedPoint.Y, (int)W, (int)H);
             controlWindow.ShowDialog();
 
-            endPlayer.Play("endSound");
+            if (Properties.Settings.Default.playSoundCapture)
+            {
+                endPlayer.Play("endSound");
+            }
+
+            //Opens my recordings
+            if(Properties.Settings.Default.openFileCapture)
+            {
+                Process.Start("explorer.exe", ExoGif.Properties.Settings.Default.saveDirectory);
+            }
+
             this.Close();
         }
 
