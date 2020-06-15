@@ -30,7 +30,7 @@ namespace ExoGif
                         break;
                     case "/myRecordings":
                         //Open my recordings
-                        Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+                        Process.Start("explorer.exe", ExoGif.Properties.Settings.Default.saveDirectory);
                         break;
                     case "/settings":
                         SettingsWindow settingsWindow = new SettingsWindow();
