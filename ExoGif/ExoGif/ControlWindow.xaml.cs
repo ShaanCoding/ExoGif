@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,6 @@ namespace ExoGif
         public ControlWindow(string outputFileName, int X, int Y, int W, int H)
         {
             InitializeComponent();
-
             screenRecording = new ScreenRecording(outputFileName, X, Y, W, H);
             //Means we have a progress / timer bar of max limit
             worker.WorkerReportsProgress = true;
@@ -109,6 +109,12 @@ namespace ExoGif
                 //Return progressbar%
                 int returnProgressPercent = (int)Math.Ceiling((decimal)(i) / frames * 100);
                 worker.ReportProgress(returnProgressPercent);
+            }
+
+            //Opens my recordings
+            if (Properties.Settings.Default.openFileCapture && e.Cancel == false)
+            {
+                Process.Start("explorer.exe", ExoGif.Properties.Settings.Default.saveDirectory);
             }
         }
 

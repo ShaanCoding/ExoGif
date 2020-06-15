@@ -34,8 +34,8 @@ namespace ExoGif
         {
             InitializeComponent();
             startPlayer = new MP3Player(Environment.CurrentDirectory + @"\Assets\Sounds\startSound.mp3", "startSound", false);
-            endPlayer = new MP3Player(Environment.CurrentDirectory + @"\Assets\Sounds\endSound.mp3", "endSound", false);
             startPlayer.Volume("startSound", 1000);
+            endPlayer = new MP3Player(Environment.CurrentDirectory + @"\Assets\Sounds\endSound.mp3", "endSound", false);
             endPlayer.Volume("endSound", 1000);
         }
 
@@ -77,12 +77,6 @@ namespace ExoGif
             if (Properties.Settings.Default.playSoundCapture)
             {
                 endPlayer.Play("endSound");
-            }
-
-            //Opens my recordings
-            if(Properties.Settings.Default.openFileCapture)
-            {
-                Process.Start("explorer.exe", ExoGif.Properties.Settings.Default.saveDirectory);
             }
 
             this.Close();

@@ -39,24 +39,15 @@ namespace ExoGif
             }
 
             URLDirectoryTextBox.Text = Properties.Settings.Default.saveDirectory;
-            ExoGifBackgroundProcessCheckBox.IsChecked = Properties.Settings.Default.backgroundProcess;
             ExoGifSoundOnCaptureCheckBox.IsChecked = Properties.Settings.Default.playSoundCapture;
             ExoGifFolderAfterCaptureCheckBox.IsChecked = Properties.Settings.Default.openFileCapture;
             LengthTextBox.Text = Properties.Settings.Default.recordingLength.ToString();
             FramesPerSecondTextBox.Text = Properties.Settings.Default.framesPerSecond.ToString();
-
-            /*
-            //Also need hotkey one
-            //String.split it
-            string[] hotkeySplit = Properties.Settings.Default.hotkeySettings.Split(' ');
-            HotKeyListBoxOne.item
-            */
         }
 
         public void SaveSettings()
         {
             Properties.Settings.Default.saveDirectory = URLDirectoryTextBox.Text;
-            Properties.Settings.Default.backgroundProcess = (bool)ExoGifBackgroundProcessCheckBox.IsChecked;
             Properties.Settings.Default.playSoundCapture = (bool)ExoGifSoundOnCaptureCheckBox.IsChecked;
             Properties.Settings.Default.openFileCapture = (bool)ExoGifFolderAfterCaptureCheckBox.IsChecked;
 

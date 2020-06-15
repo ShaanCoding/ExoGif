@@ -38,18 +38,6 @@ namespace ExoGif.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool backgroundProcess {
-            get {
-                return ((bool)(this["backgroundProcess"]));
-            }
-            set {
-                this["backgroundProcess"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool playSoundCapture {
             get {
                 return ((bool)(this["playSoundCapture"]));
@@ -68,18 +56,6 @@ namespace ExoGif.Properties {
             }
             set {
                 this["openFileCapture"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string hotkeySettings {
-            get {
-                return ((string)(this["hotkeySettings"]));
-            }
-            set {
-                this["hotkeySettings"] = value;
             }
         }
         

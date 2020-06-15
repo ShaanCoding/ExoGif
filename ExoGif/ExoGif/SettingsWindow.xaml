@@ -9,12 +9,8 @@
     <Grid>
         <TextBox x:Name="URLDirectoryTextBox" HorizontalAlignment="Left" Height="23" Margin="9,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234"/>
         <Button x:Name="URLDirectoryButton" Content="..." HorizontalAlignment="Left" Margin="254,22,0,0" VerticalAlignment="Top" Width="75" Click="URLDirectoryButton_Click"/>
-        <CheckBox x:Name="ExoGifBackgroundProcessCheckBox" Content="Keep ExoGif Active As Background Process" HorizontalAlignment="Left" Margin="28,57,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ExoGifSoundOnCaptureCheckBox" Content="Play Sound On Capture" HorizontalAlignment="Left" Margin="27,80,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ExoGifFolderAfterCaptureCheckBox" Content="Open Folder After Capture" HorizontalAlignment="Left" Margin="26,99,0,0" VerticalAlignment="Top"/>
-        <Label Content="Record Hotkey:" HorizontalAlignment="Left" Margin="14,133,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="HotKeyListBoxOne" HorizontalAlignment="Left" Height="100" Margin="112,131,0,0" VerticalAlignment="Top" Width="100"/>
-        <ListBox x:Name="HotKeyListBoxTwo" HorizontalAlignment="Left" Height="100" Margin="247,131,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="227,507,0,0" VerticalAlignment="Top" Width="75" Click="OkButton_Click"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="362,507,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
         <TextBox x:Name="LengthTextBox" HorizontalAlignment="Left" Height="23" Margin="43,252,0,0" TextWrapping="Wrap" Text="Length" VerticalAlignment="Top" Width="120"/>
