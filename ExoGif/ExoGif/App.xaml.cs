@@ -31,6 +31,7 @@ namespace ExoGif
                     case "/myRecordings":
                         //Open my recordings
                         Process.Start("explorer.exe", ExoGif.Properties.Settings.Default.saveDirectory);
+                        System.Windows.Application.Current.Shutdown();
                         break;
                     case "/settings":
                         SettingsWindow settingsWindow = new SettingsWindow();
@@ -38,6 +39,7 @@ namespace ExoGif
                         break;
                     case "/help":
                         Process.Start("https://github.com/ShaanCoding/ExoGif");
+                        System.Windows.Application.Current.Shutdown();
                         break;
                 }
             }

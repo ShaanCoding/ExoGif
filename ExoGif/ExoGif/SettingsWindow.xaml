@@ -7,16 +7,35 @@
         mc:Ignorable="d"
         Title="ExoGIF Settings" Height="650" Width="550" Icon="Assets/Settings.ico" ContentRendered="SettingsWindow1_ContentRendered">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="100" Margin="32,4,0,0" VerticalAlignment="Top" Width="100" Source="Assets/ExoGIF.ico"/>
-        <Label Content="ExoGif" HorizontalAlignment="Left" Margin="184,45,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="URLDirectoryTextBox" HorizontalAlignment="Left" Height="23" Margin="21,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234"/>
-        <Button x:Name="URLDirectoryButton" Content="..." HorizontalAlignment="Left" Margin="266,104,0,0" VerticalAlignment="Top" Width="75" Click="URLDirectoryButton_Click"/>
-        <CheckBox x:Name="ExoGifSoundOnCaptureCheckBox" Content="Play Sound On Capture" HorizontalAlignment="Left" Margin="39,162,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="ExoGifFolderAfterCaptureCheckBox" Content="Open Folder After Capture" HorizontalAlignment="Left" Margin="38,181,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="227,507,0,0" VerticalAlignment="Top" Width="75" Click="OkButton_Click"/>
-        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="362,507,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
-        <TextBox x:Name="LengthTextBox" HorizontalAlignment="Left" Height="23" Margin="43,252,0,0" TextWrapping="Wrap" Text="Length" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="FramesPerSecondTextBox" HorizontalAlignment="Left" Height="23" Margin="44,281,0,0" TextWrapping="Wrap" Text="FPS" VerticalAlignment="Top" Width="120"/>
-        <Label Content="github.com/ShaanCoding" HorizontalAlignment="Left" Margin="192,572,0,0" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Source="Assets/ExoGIF.ico" Grid.Row="0" Margin="20, 0, 0, 0"/>
+        <Label Content="ExoGif" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="24"  Margin="140, 0, 0, 0"/>
+
+        <TextBox x:Name="URLDirectoryTextBox" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="350"  Grid.Row="1"  Margin="20, 0, 0, 0"/>
+        <Button x:Name="URLDirectoryButton" Content="..." HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="75" Click="URLDirectoryButton_Click"  Grid.Row="1"  Margin="390, 0, 0, 0"/>
+
+        <CheckBox x:Name="ExoGifSoundOnCaptureCheckBox" Content="Play Sound On Capture" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2"  Margin="20, 0, 0, 0"/>
+        <CheckBox x:Name="ExoGifFolderAfterCaptureCheckBox" Content="Open Folder After Capture" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="3"  Margin="20, 0, 0, 0"/>
+
+        <Label Content="Time (s):" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Margin="20, 0, 0, 0" />
+        <TextBox x:Name="LengthTextBox" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Grid.Row="4"  Margin="80, 0, 0, 0"/>
+        <Label Content="Frames Per Second (FPS):" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5" Margin="20, 0, 0, 0" />
+        <TextBox x:Name="FramesPerSecondTextBox" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Grid.Row="5"  Margin="170, 0, 0, 0"/>
+
+        <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OkButton_Click" Grid.Row="7"  Margin="0, 0, 140, 0"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="CancelButton_Click" Grid.Row="7"  Margin="140, 0, 0, 0"/>
+        
+        <Label Content="github.com/ShaanCoding" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8" FontWeight="Bold" FontFamily="Calibri" FontSize="14" Foreground="#FF303030"/>
     </Grid>
 </Window>
