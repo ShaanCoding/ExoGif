@@ -1,12 +1,20 @@
 # ExoGif
 
-This application is a basic screen-recording software created in C# with the assistance of AnimatedGIF and the WindowsCodeAPI-Shell & Core libaries. This program was made as a clone alternative to Gyazo however saves them purely locally.
+![Main Menu](Images/exoGifBanner.png)
 
-![Main Menu](Images/mainMenu.png)
+<p align="center">
+    <b> A low-weight GIF Recording desktop app built with WPF </b>
+</p>
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/95f6ea37904247f0ad075c19b15f6628)](https://www.codacy.com/manual/ShaanCoding/ExoGif?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ShaanCoding/ExoGif&amp;utm_campaign=Badge_Grade) ![GitHub](https://img.shields.io/github/license/ShaanCoding/ExoGif) [![Github all released](https://img.shields.io/github/downloads/ShaanCoding/ExoGif/total)](https://github.com/ShaanCoding/ExoGif/releases) ![GitHub issues](https://img.shields.io/github/issues/ShaanCoding/ExoGif) ![GitHub contributors](https://img.shields.io/github/contributors/ShaanCoding/ExoGif?color=dark-green)
+
+This application is a basic screen-recording software created in C# with the assistance of AnimatedGIF and the WindowsCodeAPI-Shell & Core libraries. This program was made as a clone alternative to Gyazo however saves them purely locally.
+
+![Main Menu](Images/mainMenu.gif)
 
 ## Prerequisites
 
-The running of this program requires several libaries these include:
+The running of this program requires several libraries these include:
 
 * AnimatedGif - 1.0.5
 * System.Drawing.Common - 4.5.0
@@ -16,6 +24,10 @@ The running of this program requires several libaries these include:
 ## Authors
 
 * **Shaan Khan** - *All Work*
+
+## Acknowledgements
+
+* Base logo vector made by [Freepik](www.freepik.com) from [Flaticon](www.flaticon.com).
 
 ## License
 
