@@ -1,5 +1,7 @@
 # ExoGif
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/981999615b284bfda2e43987ea79f210)](https://app.codacy.com/manual/ShaanCoding/ExoGif?utm_source=github.com&utm_medium=referral&utm_content=ShaanCoding/ExoGif&utm_campaign=Badge_Grade_Dashboard)
+
 This application is a basic screen-recording software created in C# with the assistance of AnimatedGIF and the WindowsCodeAPI-Shell & Core libaries. This program was made as a clone alternative to Gyazo however saves them purely locally.
 
 ![Main Menu](Images/mainMenu.png)
