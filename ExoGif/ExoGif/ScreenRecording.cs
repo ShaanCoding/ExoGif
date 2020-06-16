@@ -15,9 +15,9 @@ namespace ExoGif
 {
     public class ScreenRecording
     {
-        public AnimatedGif.AnimatedGifCreator gif;
-        string outputFileName;
-        int X, Y, W, H;
+        private AnimatedGif.AnimatedGifCreator gif;
+        private string outputFileName;
+        private readonly int X, Y, W, H;
 
         public ScreenRecording(string outputFileName, int X, int Y, int W, int H)
         {

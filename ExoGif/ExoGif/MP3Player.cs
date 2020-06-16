@@ -9,7 +9,7 @@ namespace ExoGif
 {
     public class MP3Player
     {
-        private bool repeat;
+        private readonly bool repeat;
 
         public MP3Player(string fileName, string alias, bool repeat)
         {

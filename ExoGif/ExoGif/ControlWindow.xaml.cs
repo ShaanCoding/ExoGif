@@ -23,10 +23,10 @@ namespace ExoGif
     public partial class ControlWindow : Window
     {
         //Cancel, Start-STOP, Submit
-        public bool isPause = false;
-        public bool isSubmit = false;
+        private bool isPause;
+        private bool isSubmit;
 
-        ScreenRecording screenRecording;
+        private readonly ScreenRecording screenRecording;
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
         public ControlWindow(string outputFileName, int X, int Y, int W, int H)
