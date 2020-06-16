@@ -29,10 +29,11 @@ namespace ExoGif
             if (e.Args.Count() == 1)
             {
                 //Should be a switch statement
-                switch(e.Args[0])
+                CaptureWindow captureWindow = new CaptureWindow();
+
+                switch (e.Args[0])
                 {
                     case "/captureGIF":
-                        CaptureWindow captureWindow = new CaptureWindow();
                         captureWindow.Show();
                         break;
                     case "/myRecordings":
@@ -47,6 +48,9 @@ namespace ExoGif
                     case "/help":
                         Process.Start("https://github.com/ShaanCoding/ExoGif");
                         System.Windows.Application.Current.Shutdown();
+                        break;
+                    default:
+                        captureWindow.Show();
                         break;
                 }
             }

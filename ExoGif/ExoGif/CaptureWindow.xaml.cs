@@ -24,11 +24,11 @@ namespace ExoGif
     {
         private Point Start;
         private Point Current;
-        private bool isDrawing = false;
-        private double X, Y, W, H;
+        private bool isDrawing;
+        private readonly double X, Y, W, H;
 
-        public MP3Player startPlayer;
-        public MP3Player endPlayer;
+        private MP3Player startPlayer;
+        private MP3Player endPlayer;
 
         public CaptureWindow()
         {
@@ -105,7 +105,9 @@ namespace ExoGif
 
                 // Toogle visibility
                 if (Rect.Visibility != Visibility.Visible)
+                {
                     Rect.Visibility = Visibility.Visible;
+                }
             }
         }
     }
